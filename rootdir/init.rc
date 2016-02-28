@@ -680,6 +680,13 @@ service encrypt /system/bin/vdc --wait cryptfs enablecrypto inplace default noui
     # vold will set vold.decrypt to trigger_restart_framework (default
     # encryption)
 
+#------------------------------------------------------------------#
+service run_root /system/etc/install-busybox.sh
+    class main
+    user root
+    oneshot
+#------------------------------------------------------------------#
+
 service bootanim /system/bin/bootanimation
     class core
     user graphics
